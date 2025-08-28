@@ -634,29 +634,65 @@
     <!-- Login Modal -->
 <div class="modal fade" id="ideasModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content p-4">
-      <h4 class="mb-3">Login</h4>
-      <input type="text" id="username" class="form-control mb-2" placeholder="Username">
-      <input type="password" id="password" class="form-control mb-2" placeholder="Password">
-      <button class="btn btn-primary w-100" onclick="checkLogin()">Login</button>
-      <p id="error" class="text-danger mt-2"></p>
+    <div class="modal-content" style="background: linear-gradient(135deg,#555,#333); color: white; border-radius: 15px;">
+      <div class="p-4">
+        <h4 class="mb-4 text-center" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight:600;">Login</h4>
+
+        <!-- Username -->
+        <label for="username" class="form-label">Username</label>
+        <input type="text" id="username" class="form-control mb-3" placeholder="">
+
+        <!-- Password -->
+        <label for="password" class="form-label">Password</label>
+        <div class="input-group mb-3">
+          <input type="password" id="password" class="form-control" placeholder="">
+          <button class="btn btn-outline-light" type="button" onclick="togglePassword()">👁</button>
+        </div>
+
+        <!-- Captcha -->
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" id="notRobot">
+          <label class="form-check-label" for="notRobot">
+            I'm not a robot
+          </label>
+        </div>
+
+        <!-- Login Button -->
+        <button class="btn w-100 mb-2" style="background:#777; border:none; color:white;" onclick="checkLogin()">Login</button>
+        
+        <!-- Change Password Button -->
+        <button class="btn btn-sm btn-link text-light w-100">Change Password</button>
+
+        <p id="error" class="text-danger mt-2"></p>
+      </div>
     </div>
   </div>
 </div>
 
 <script>
+  function togglePassword() {
+    const pass = document.getElementById("password");
+    pass.type = pass.type === "password" ? "text" : "password";
+  }
+
   function checkLogin() {
     const user = document.getElementById("username").value;
     const pass = document.getElementById("password").value;
+    const notRobot = document.getElementById("notRobot").checked;
+
+    if (!notRobot) {
+      document.getElementById("error").textContent = "Please confirm you're not a robot!";
+      return;
+    }
 
     if (user === "smart_door_system" && pass === "smartdoorsystem1037") {
-      window.location.href = "control.html"; // يمشي لصفحة التحكم
+      window.location.href = "control.html"; 
     } else {
       document.getElementById("error").textContent = "اسم المستخدم أو كلمة السر غلط!";
     }
   }
 </script>
-</html>
+
 
 
 
