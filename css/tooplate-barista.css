@@ -540,7 +540,7 @@ strong {
   border-radius: var(--border-radius-medium);
   content: "";
   position: absolute;
-  top: 70%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%); /* يوسّط الصندوق */
   width: 600px;   /* يخلي العرض حسب النص */
@@ -1203,5 +1203,6 @@ strong {
     top: 13px;
   }
 }
+
 
 
