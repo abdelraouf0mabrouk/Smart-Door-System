@@ -652,7 +652,7 @@
         <!-- Captcha Question -->
         <div class="mb-3">
           <label id="captchaQuestion" class="form-label"></label>
-          <input type="text" id="captchaAnswer" class="form-control" placeholder="أدخل الإجابة">
+          <input type="text" id="captchaAnswer" class="form-control" placeholder="">
         </div>
 
         <!-- Login Button -->
@@ -669,7 +669,7 @@
     let a = Math.floor(Math.random()*10)+1;
     let b = Math.floor(Math.random()*10)+1;
     correctAnswer = a + b;
-    document.getElementById("captchaQuestion").textContent = `حل المعادلة: ${a} + ${b} = ?`;
+    document.getElementById("captchaQuestion").textContent = `solve the equation: ${a} + ${b} = ?`;
   }
 
   function togglePassword() {
@@ -698,3 +698,4 @@
   // أول ما يفتح المودال يولد سؤال
   document.addEventListener("DOMContentLoaded", generateCaptcha);
 </script>
+
