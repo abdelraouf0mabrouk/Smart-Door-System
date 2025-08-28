@@ -2,56 +2,99 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Control Panel</title>
+  <title>Smart Door System Control</title>
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-icons.css" rel="stylesheet">
+  <link href="css/tooplate-barista.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(120deg, #2c2c2c, #1a1a1a);
+      color: white;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    h1 {
+      margin-top: 50px;
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    #beginBtn {
+      margin-top: 30px;
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      background: #444;
+      color: white;
+      border: none;
+    }
+    #menuPanel {
+      margin-top: 50px;
+    }
+    .navbar-custom {
+      background-color: #333;
+      border-radius: 15px;
+      padding: 15px;
+    }
+    .nav-link {
+      color: white !important;
+      font-weight: 600;
+    }
+    .dropdown-menu {
+      background-color: #444;
+    }
+    .dropdown-item {
+      color: white;
+    }
+    .dropdown-item:hover {
+      background-color: #666;
+    }
+  </style>
 </head>
-<body class="text-center p-5" style="background:#f5f5f5;">
+<body class="text-center">
 
-  <h1 class="mb-5">SMART DOOR SYSTEM</h1>
+  <h1>SMART DOOR SYSTEM</h1>
+  <button id="beginBtn">Begin</button>
 
-  <!-- Begin Button -->
-  <button id="beginBtn" class="btn btn-dark btn-lg">Begin</button>
-
-  <!-- Hidden Panel -->
-  <div id="menuPanel" class="mt-5" style="display:none;">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded shadow p-3">
+  <div id="menuPanel" style="display:none;">
+    <nav class="navbar navbar-expand-lg navbar-custom shadow">
       <div class="container-fluid justify-content-center">
         <ul class="navbar-nav">
-          <!-- Option 1 -->
+          
+          <!-- Options -->
           <li class="nav-item dropdown me-3">
-            <a class="nav-link dropdown-toggle" href="#" id="optionsMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="optionsMenu" role="button" data-bs-toggle="dropdown">
               Smart Door System Options
             </a>
             <ul class="dropdown-menu" aria-labelledby="optionsMenu">
-              <li><a class="dropdown-item" href="#">فتح الباب</a></li>
-              <li><a class="dropdown-item" href="#">قفل الباب</a></li>
-              <li><a class="dropdown-item" href="#">تفعيل النظام</a></li>
-              <li><a class="dropdown-item" href="#">تعطيل النظام</a></li>
+              <li><a class="dropdown-item" href="#">🔓 فتح الباب</a></li>
+              <li><a class="dropdown-item" href="#">🔒 قفل الباب</a></li>
+              <li><a class="dropdown-item" href="#">🚨 تفعيل النظام</a></li>
+              <li><a class="dropdown-item" href="#">🛑 تعطيل النظام</a></li>
             </ul>
           </li>
 
-          <!-- Option 2 -->
+          <!-- Explanation -->
           <li class="nav-item dropdown me-3">
-            <a class="nav-link dropdown-toggle" href="#" id="explainMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="explainMenu" role="button" data-bs-toggle="dropdown">
               Smart Door System Explanation
             </a>
             <ul class="dropdown-menu" aria-labelledby="explainMenu">
-              <li><a class="dropdown-item" href="#">شرح النظام</a></li>
-              <li><a class="dropdown-item" href="#">الفيديو التعليمي</a></li>
+              <li><a class="dropdown-item" href="#">📖 شرح النظام</a></li>
+              <li><a class="dropdown-item" href="#">🎥 فيديو تعليمي</a></li>
             </ul>
           </li>
 
-          <!-- Option 3 -->
+          <!-- Add-on Ideas -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="ideasMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="ideasMenu" role="button" data-bs-toggle="dropdown">
               Smart Door System Add-on Ideas
             </a>
             <ul class="dropdown-menu" aria-labelledby="ideasMenu">
-              <li><a class="dropdown-item" href="#">إضافة مستشعر بصمة</a></li>
-              <li><a class="dropdown-item" href="#">تشغيل صوت إنذار</a></li>
-              <li><a class="dropdown-item" href="#">إضافة سجل دخول</a></li>
+              <li><a class="dropdown-item" href="#">👆 إضافة بصمة</a></li>
+              <li><a class="dropdown-item" href="#">🔔 تشغيل إنذار</a></li>
+              <li><a class="dropdown-item" href="#">📜 سجل دخول</a></li>
             </ul>
           </li>
+
         </ul>
       </div>
     </nav>
@@ -65,4 +108,4 @@
     };
   </script>
 </body>
-</html>
+</html></html>
