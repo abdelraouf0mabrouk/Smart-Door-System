@@ -631,7 +631,7 @@
         <script src="js/custom.js"></script>
 
     </body>
-    <!-- Login Modal -->
+<!-- Login Modal -->
 <div class="modal fade" id="ideasModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content" style="background: linear-gradient(135deg,#555,#333); color: white; border-radius: 15px;">
@@ -640,29 +640,23 @@
 
         <!-- Username -->
         <label for="username" class="form-label">Username</label>
-        <input type="text" id="username" class="form-control mb-3" placeholder="">
+        <input type="text" id="username" class="form-control mb-3">
 
         <!-- Password -->
         <label for="password" class="form-label">Password</label>
         <div class="input-group mb-3">
-          <input type="password" id="password" class="form-control" placeholder="">
+          <input type="password" id="password" class="form-control">
           <button class="btn btn-outline-light" type="button" onclick="togglePassword()">👁</button>
         </div>
 
-        <!-- Captcha -->
-        <div class="form-check mb-3">
-          <input class="form-check-input" type="checkbox" id="notRobot">
-          <label class="form-check-label" for="notRobot">
-            I'm not a robot
-          </label>
+        <!-- Captcha Question -->
+        <div class="mb-3">
+          <label id="captchaQuestion" class="form-label"></label>
+          <input type="text" id="captchaAnswer" class="form-control" placeholder="أدخل الإجابة">
         </div>
 
         <!-- Login Button -->
         <button class="btn w-100 mb-2" style="background:#777; border:none; color:white;" onclick="checkLogin()">Login</button>
-        
-        <!-- Change Password Button -->
-        <button class="btn btn-sm btn-link text-light w-100">Change Password</button>
-
         <p id="error" class="text-danger mt-2"></p>
       </div>
     </div>
@@ -670,6 +664,14 @@
 </div>
 
 <script>
+  let correctAnswer;
+  function generateCaptcha() {
+    let a = Math.floor(Math.random()*10)+1;
+    let b = Math.floor(Math.random()*10)+1;
+    correctAnswer = a + b;
+    document.getElementById("captchaQuestion").textContent = `حل المعادلة: ${a} + ${b} = ?`;
+  }
+
   function togglePassword() {
     const pass = document.getElementById("password");
     pass.type = pass.type === "password" ? "text" : "password";
@@ -678,21 +680,21 @@
   function checkLogin() {
     const user = document.getElementById("username").value;
     const pass = document.getElementById("password").value;
-    const notRobot = document.getElementById("notRobot").checked;
+    const captcha = document.getElementById("captchaAnswer").value;
 
-    if (!notRobot) {
-      document.getElementById("error").textContent = "Please confirm you're not a robot!";
+    if (parseInt(captcha) !== correctAnswer) {
+      document.getElementById("error").textContent = "إجابة التحقق غلط!";
+      generateCaptcha();
       return;
     }
 
-    if (user === "smart_door_system" && pass === "smartdoorsystem1037") {
+    if (user === "smart_door_system" && pass === "1037") {
       window.location.href = "control.html"; 
     } else {
       document.getElementById("error").textContent = "اسم المستخدم أو كلمة السر غلط!";
     }
   }
+
+  // أول ما يفتح المودال يولد سؤال
+  document.addEventListener("DOMContentLoaded", generateCaptcha);
 </script>
-
-
-
-
