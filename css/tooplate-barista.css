@@ -1167,8 +1167,8 @@ strong {
   }
 
   .hero-section::after {
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
   }
 
   .booking-form {
@@ -1203,6 +1203,7 @@ strong {
     top: 13px;
   }
 }
+
 
 
 
